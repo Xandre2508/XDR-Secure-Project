@@ -1,0 +1,253 @@
+/* Importação da fonte */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+    color: #ffffff;
+    min-height: 100vh;
+    overflow-x: hidden;
+    /* Remover o background do body, pois o vídeo será o fundo */
+    background: #0a1f33; /* Fundo de fallback, caso o vídeo não carregue */
+}
+
+/* VIDEO DE FUNDO: Adicione estas regras para posicionar e estilizar o vídeo */
+#background-video {
+    position: fixed; /* Fixa o vídeo na viewport */
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; /* Coloca o vídeo atrás de todos os outros elementos */
+    object-fit: cover; /* Garante que o vídeo cubra toda a tela sem distorção */
+}
+
+/* Adiciona uma sobreposição escura para melhorar a legibilidade do texto */
+.hero-section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 120px 80px;
+    gap: 80px;
+    min-height: 100vh;
+    box-sizing: border-box;
+    /* Adiciona um gradiente sobre o vídeo para escurecer o fundo */
+    background: rgba(10, 31, 51, 0.4); 
+}
+
+/* O resto do seu CSS permanece o mesmo, mas aqui está ele completo */
+
+/* --- Navbar --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 60px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    box-sizing: border-box; 
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+/* Logo na navbar */
+.logo-text img {
+    height: 40px;
+    filter: drop-shadow(0 0 10px #00e5ff); 
+}
+
+/* Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 15px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #00e5ff;
+}
+
+/* --- Botões base --- */
+button {
+    font-family: 'Roboto', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 6px;
+    padding: 12px 28px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+/* Botão Entrar (navbar) */
+.btn-entrar {
+    text-decoration: none; /* Adicione esta linha para remover o sublinhado */
+    font-family: 'Roboto', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 6px;
+    padding: 12px 28px; /* Adicione estas propriedades do botão */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    background-color: #00e5ff;
+    color: #0a1f33;
+    box-shadow: 0 0 12px rgba(0, 229, 255, 0.6);
+}
+
+.btn-entrar:hover {
+    background-color: #00bcd4;
+    box-shadow: 0 0 16px rgba(0, 229, 255, 0.9);
+}
+
+/* --- Hero Section --- */
+.hero-content {
+    flex: 1;
+    max-width: 520px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+/* Subtexto */
+.hero-content p {
+    font-size: 1rem;
+    color: #d0d0d0;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Botões da Hero Section */
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 12px 28px;
+    cursor: pointer;
+    font-weight: 700;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+/* Botão Primário (branco discreto) */
+.btn-primary {
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+}
+
+/* Botão Secundário (azul neon) */
+.btn-secondary {
+    background-color: transparent;
+    border: 1px solid #00e5ff;
+    color: #00e5ff;
+    box-shadow: 0 0 8px rgba(0, 229, 255, 0.5);
+}
+
+.btn-secondary:hover {
+    background-color: rgba(0, 229, 255, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 0 16px rgba(0, 229, 255, 0.8);
+}
+
+/* Imagem Hero (logo grande à direita) */
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 420px;
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 0 20px #00e5ff);
+}
+
+/* --- Responsividade --- */
+@media (max-width: 900px) {
+    .navbar {
+        padding: 25px 20px;
+        flex-direction: column; 
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .nav-right {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        gap: 50px;
+        padding: 100px 40px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-image img {
+        width: 280px;
+    }
+
+    .btn-primary, .btn-secondary {
+        flex: 1;
+        text-align: center;
+    }
+}

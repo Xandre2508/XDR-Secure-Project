@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XDR Secure</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <video autoplay muted loop id="background-video">
+      <source src="Imagens/giphy2-ezgif.com-gif-to-mp4-converter.mp4" type="video/mp4">
+    </video>
+
+    <nav class="navbar">
+        <div class="logo-text">
+            <h1>Xtended Detection and Response</h1>
+        </div>
+
+        <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="#">Produtos</a></li>
+                    <li><a href="#">Soluções</a></li>
+                </ul>
+            <a href="login.html" target="_blank" class="btn-entrar">ENTRAR</a>
+        </div>      
+ 
+    </nav>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>
+                A <span id="changing-word">Segurança</span><br>
+                que não sabias que<br>
+                precisavas
+            </h1>
+            <p>
+                A XDR é uma rede de distribuição de informação que permite fornecer conteúdo Web projetado 
+                para proteger redes com uma solução de mitigação automatizada de última geração desenvolvida 
+                internamente que visa ser segura, privada, rápida e confiável, com o objetivo de proteger 
+                serviços contra qualquer ataque cibernético.
+            </p>
+            <div class="hero-buttons">
+                <button class="btn-primary">INICIAR A JORNADA</button>
+                <button class="btn-secondary">CONTACTE-NOS</button>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <img src="imagens/LogotipoEmpresa.png" alt="Logotipo XDR">
+        </div>
+    </section>
+
+    <script>
+        const words = ["Segurança", "Proteção", "Resiliência"];
+        let i = 0;
+        const changingWordElement = document.getElementById("changing-word");
+
+        function changeWord() {
+            i = (i + 1) % words.length;
+            changingWordElement.textContent = words[i];
+        }
+
+        setInterval(changeWord, 3000);
+    </script>
+
+</body>
+</html>
