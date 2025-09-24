@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Conta - XDR Secure</title>
+    <link rel="stylesheet" href="style.css"> 
+    <style>
+        /* Estilos específicos para a página de login (podem ser usados aqui também) */
+        body {
+            background-color: #0a1f33;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #ffffff;
+        }
+        .login-container {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
+        }
+        .login-container h2 {
+            margin-bottom: 20px;
+            color: #00e5ff;
+        }
+        .login-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #00e5ff;
+            background-color: transparent;
+            color: #ffffff;
+            border-radius: 5px;
+        }
+        .login-form button {
+            width: 100%;
+            padding: 12px;
+            background-color: #00e5ff;
+            color: #0a1f33;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .login-form button:hover {
+            background-color: #00bcd4;
+        }
+        .login-container p {
+            margin-top: 20px;
+        }
+        .login-container a {
+            color: #00e5ff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .login-container a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Criar Conta</h2>
+        <form class="login-form" action="#" method="post">
+            <input type="text" name="username" placeholder="Usuário" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Senha" required>
+            <input type="password" name="confirm_password" placeholder="Confirmar Senha" required>
+            <button type="submit">Criar Conta</button>
+        </form>
+        <p>Já tem uma conta? <a href="login.html">Faça login aqui</a></p>
+    </div>
+</body>
+</html>
