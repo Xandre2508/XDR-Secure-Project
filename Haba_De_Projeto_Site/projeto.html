@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Floating Orb — Color Toggle Fix</title>
+<style>
+  :root{
+    --size: 320px;
+    --core-size: 72%;
+    --aura-blur: 64px;
+    --ring-thickness: 2.6px;
+    --float-distance: 18px;
+    --float-speed: 6.8s;
+    --ring-speed: 10s;
+    --sparkle-count: 10;
+    --bg: radial-gradient(1000px 400px at 10% 10%, #071024 0%, #02040a 25%, #000 100%);
+  }
+
+  /* THEME COLORS */
+  .theme-1 { --orb-color: 173 92 255; }   /* violet */
+  .theme-2 { --orb-color: 64 220 200; }   /* teal */
+  .theme-3 { --orb-color: 255 120 90; }   /* orange */
+
+  html,body{
+    height:100%;
+    margin:0;
+    background: var(--bg);
+    display:grid;
+    place-items:center;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    color: #fff;
+  }
+
+  .stage { width:var(--size); height:var(--size); display:grid; place-items:center; perspective:900px; }
+
+  @keyframes float {
+    0%,100% { transform: translateY(calc(-1 * var(--float-distance))); }
+    50% { transform: translateY(calc(var(--float-distance))); }
+  }
+
+  .orb-wrap {
+    width:100%; height:100%;
+    display:grid; place-items:center;
+    animation: float var(--float-speed) ease-in-out infinite;
+    position:relative;
+    cursor:pointer;
+    transition: transform .2s ease;
+  }
+
+  .orb-wrap:hover { transform: scale(1.03); }
+  .orb-wrap:active { transform: scale(0.98); }
+
+  .aura {
+    position:absolute; inset:-30%;
+    border-radius:50%;
+    background:
+      radial-gradient(circle at 35% 30%, color-mix(in srgb, rgba(var(--orb-color),0.26), transparent 30%), transparent 40%),
+      radial-gradient(circle at 70% 70%, color-mix(in srgb, rgba(var(--orb-color),0.12), transparent 20%), transparent 45%);
+    filter: blur(var(--aura-blur));
+    opacity:.95;
+    pointer-events:none;
+    mix-blend-mode:screen;
+  }
+
+  .core {
+    width:var(--core-size); height:var(--core-size);
+    border-radius:50%;
+    position:relative; overflow:hidden;
+    background:
+      radial-gradient(120% 80% at 30% 25%, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.35) 6%, rgba(255,255,255,0.06) 8%, transparent 20%),
+      radial-gradient(80% 60% at 70% 70%, rgba(255,255,255,0.06), transparent 30%),
+      radial-gradient(circle at 50% 50%, color-mix(in srgb, rgba(var(--orb-color),0.26), transparent 10%), color-mix(in srgb, rgba(var(--orb-color),0.18), rgba(0,0,0,0.08) 60%));
+    box-shadow:
+      inset 0 8px 30px rgba(255,255,255,0.05),
+      inset 0 -24px 56px rgba(0,0,0,0.35),
+      0 18px 60px rgba(0,0,0,0.7);
+    border:1px solid rgba(255,255,255,0.06);
+  }
+
+  .swirl {
+    position:absolute; inset:-8%;
+    background: conic-gradient(from 210deg at 50% 50%, rgba(var(--orb-color),0.06), transparent 90deg, rgba(var(--orb-color),0.02));
+    mix-blend-mode:screen;
+    animation: swirlAnim 7.8s linear infinite;
+  }
+  @keyframes swirlAnim { from{transform:rotate(0)} to{transform:rotate(360deg)} }
+
+  .glint {
+    position:absolute;
+    width:28%; height:28%; left:12%; top:10%;
+    border-radius:50%;
+    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.95), rgba(255,255,255,0.28) 28%, rgba(255,255,255,0.02) 46%, transparent 60%);
+    filter: blur(6px);
+  }
+
+  .rings { position:absolute; inset:0; pointer-events:none; }
+  .ring {
+    position:absolute; left:50%; top:50%;
+    border-radius:50%; border:2px solid rgba(255,255,255,0.08);
+    transform-origin:center; mix-blend-mode:screen;
+  }
+  .r1 { width:86%; height:86%; margin:-43%; animation:spin1 10s linear infinite; transform:rotateX(65deg); }
+  .r2 { width:110%; height:110%; margin:-55%; animation:spin2 16s linear reverse infinite; transform:rotateX(45deg); }
+  .r3 { width:64%; height:64%; margin:-32%; animation:spin1 7s linear infinite; transform:rotateX(80deg); border-color:rgba(var(--orb-color),0.5); }
+
+  @keyframes spin1 { from{transform:rotateX(65deg) rotateZ(0)} to{transform:rotateX(65deg) rotateZ(360deg)} }
+  @keyframes spin2 { from{transform:rotateX(45deg) rotateZ(0)} to{transform:rotateX(45deg) rotateZ(360deg)} }
+
+  .sparkle {
+    position:absolute; width:6px; height:6px; border-radius:50%;
+    background:white; opacity:.9; filter:blur(.6px);
+    mix-blend-mode:screen;
+    left:50%; top:50%; margin:-3px 0 0 -3px;
+    animation: sparkleOrbit 6s linear infinite;
+  }
+  @keyframes sparkleOrbit {
+    0%{transform:rotate(var(--start)) translateX(var(--dist));}
+    100%{transform:rotate(calc(var(--start) + 360deg)) translateX(var(--dist));}
+  }
+
+  .caption{margin-top:18px;text-align:center;font-size:13px;color:rgba(255,255,255,.7)}
+</style>
+</head>
+<body>
+  <div class="stage">
+    <div id="orbWrap" class="orb-wrap theme-1">
+      <div class="aura"></div>
+      <div class="rings">
+        <div class="ring r1"></div>
+        <div class="ring r2"></div>
+        <div class="ring r3"></div>
+      </div>
+      <div class="core">
+        <div class="swirl"></div>
+        <div class="glint"></div>
+        <div id="sparkles"></div>
+      </div>
+    </div>
+    <div class="neon-text">Aqui começa a apresntaçao do nosso projeto</div>
+  </div>
+
+<script>
+(function(){
+  const orbWrap = document.getElementById('orbWrap');
+  const sparkles = document.getElementById('sparkles');
+  const themes = ['theme-1','theme-2','theme-3'];
+  let idx = 0;
+
+  // generate sparkles
+  for(let i=0;i<10;i++){
+    const s=document.createElement('div');
+    s.className='sparkle';
+    s.style.setProperty('--start', Math.round(Math.random()*360)+'deg');
+    s.style.setProperty('--dist', (40+Math.random()*60)+'px');
+    s.style.animationDuration=(4+Math.random()*5)+'s';
+    sparkles.appendChild(s);
+  }
+
+  orbWrap.addEventListener('click',()=>{
+    idx=(idx+1)%themes.length;
+    orbWrap.classList.remove(...themes);
+    orbWrap.classList.add(themes[idx]);
+  });
+})();
+</script>
+</body>
+</html>

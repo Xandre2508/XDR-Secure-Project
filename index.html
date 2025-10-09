@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XDR Secure</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 </head>
 <body>
 
@@ -18,15 +19,16 @@
         </div>
 
         <div class="nav-right">
-                <ul class="nav-links">
-                    <li><a href="#">Produtos</a></li>
-                    <li><a href="#">Soluções</a></li>
-                </ul>
+            <ul class="nav-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="Haba_De_Projeto_Site/projeto.html">Projeto</a></li>
+                <li><a href="parceiros.html">Parceiros</a></li>
+                <li><a href="contactos.html">Contactos</a></li>
+            </ul>
             <a href="Login/Login.html" class="btn-entrar">ENTRAR</a>
         </div>      
- 
     </nav>
-
+    
     <section class="hero-section">
         <div class="hero-content">
             <h1>
@@ -50,6 +52,53 @@
             <img src="imagens/LogotipoEmpresa.png" alt="Logotipo XDR">
         </div>
     </section>
+    
+    <section id="what-we-do">
+        <div class="container">
+            <h2 class="section-title js-scroll-reveal">O Que Fazemos</h2>
+            <p class="section-subtitle js-scroll-reveal">Defendemos o futuro digital. A nossa missão é simples: garantir que os seus dados permaneçam seus.</p>
+
+            <div class="feature-grid">
+                <div class="feature-card js-scroll-reveal" data-delay="0">
+                    <h3>Deteção Preditiva</h3>
+                    <p>Usamos IA para antecipar ameaças antes que atinjam a sua rede.</p>
+                </div>
+                <div class="feature-card js-scroll-reveal" data-delay="200">
+                    <h3>Resposta Automatizada</h3>
+                    <p>Ações imediatas para isolar e neutralizar qualquer ataque em tempo real.</p>
+                </div>
+                <div class="feature-card js-scroll-reveal" data-delay="400">
+                    <h3>Visibilidade Total</h3>
+                    <p>Monitorização de todos os endpoints para uma visão de 360 graus.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team-section">
+        <h2 class="section-title js-scroll-reveal">A Nossa Equipa</h2>
+        <p class="section-subtitle js-scroll-reveal">Fundadores e Inovadores por detrás do XDR Secure.</p>
+        
+        <div class="team-grid">
+            <div class="team-member js-scroll-reveal" data-delay="0">
+                <div class="member-photo"></div>
+                <h3>Dra. Karyna Silva</h3>
+                <p>Diretora de Investigação</p>
+            </div>
+            
+            <div class="team-member js-scroll-reveal" data-delay="200">
+                <div class="member-photo"></div>
+                <h3>Dr. João Fernandes</h3>
+                <p>Especialista em Cibersegurança</p>
+            </div>
+            
+            <div class="team-member js-scroll-reveal" data-delay="400">
+                <div class="member-photo"></div>
+                <h3>Eng. Ricardo Costa</h3>
+                <p>Desenvolvimento de Software</p>
+            </div>
+        </div>
+    </section>
 
     <script>
         const words = ["Segurança", "Proteção", "Resiliência"];
@@ -62,7 +111,30 @@
         }
 
         setInterval(changeWord, 3000);
-    </script>
+        
+        // Animação da Hero Section (dispara no carregamento)
+        document.addEventListener('DOMContentLoaded', function() {
+            // Anima o texto
+            anime({
+                targets: '.hero-content',
+                translateX: [-50, 0],
+                opacity: [0, 1],
+                duration: 1200,
+                easing: 'easeOutQuad'
+            });
 
+            // Anima a imagem
+            anime({
+                targets: '.hero-image',
+                scale: [0.8, 1],
+                opacity: [0, 1],
+                duration: 1200,
+                delay: 400, 
+                easing: 'easeOutQuad'
+            });
+        });
+    </script>
+    
+    <script src="scroll-reveal.js"></script> 
 </body>
 </html>

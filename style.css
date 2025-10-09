@@ -1,3 +1,7 @@
+/*================================================================================
+  1. GERAIS & SETUP
+================================================================================*/
+
 /* Importação da fonte */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
@@ -7,13 +11,35 @@ body {
     color: #ffffff;
     min-height: 100vh;
     overflow-x: hidden;
-    /* Remover o background do body, pois o vídeo será o fundo */
-    background: #0a1f33; /* Fundo de fallback, caso o vídeo não carregue */
+    /* Fundo de fallback, caso o vídeo não carregue */
+    background: #0a1f33; 
 }
 
-/* VIDEO DE FUNDO: Adicione estas regras para posicionar e estilizar o vídeo */
+/* Animações: Classe CRUCIAL para esconder elementos antes da animação com Anime.js/Scroll Reveal */
+.js-scroll-reveal {
+    opacity: 0;
+}
+
+/* --- Botões Base --- */
+button {
+    font-family: 'Roboto', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 6px;
+    padding: 12px 28px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+
+/*================================================================================
+  2. LAYOUT & FUNDO (VÍDEO)
+================================================================================*/
+
+/* Vídeo de Fundo */
 #background-video {
-    position: fixed; /* Fixa o vídeo na viewport */
+    position: fixed; 
     top: 0;
     left: 0;
     min-width: 100%;
@@ -21,26 +47,14 @@ body {
     width: auto;
     height: auto;
     z-index: -1; /* Coloca o vídeo atrás de todos os outros elementos */
-    object-fit: cover; /* Garante que o vídeo cubra toda a tela sem distorção */
+    object-fit: cover; 
 }
 
-/* Adiciona uma sobreposição escura para melhorar a legibilidade do texto */
-.hero-section {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 120px 80px;
-    gap: 80px;
-    min-height: 100vh;
-    box-sizing: border-box;
-    /* Adiciona um gradiente sobre o vídeo para escurecer o fundo */
-    background: rgba(10, 31, 51, 0.4); 
-}
 
-/* O resto do seu CSS permanece o mesmo, mas aqui está ele completo */
+/*================================================================================
+  3. BARRA DE NAVEGAÇÃO (NAVBAR)
+================================================================================*/
 
-/* --- Navbar --- */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -60,9 +74,9 @@ body {
 }
 
 /* Logo na navbar */
-.logo-text img {
-    height: 40px;
-    filter: drop-shadow(0 0 10px #00e5ff); 
+.logo-text h1 {
+    font-size: 1.2rem;
+    filter: drop-shadow(0 0 5px #00e5ff); 
 }
 
 /* Links */
@@ -87,26 +101,14 @@ body {
     color: #00e5ff;
 }
 
-/* --- Botões base --- */
-button {
-    font-family: 'Roboto', Arial, sans-serif;
-    font-weight: 700;
-    font-size: 14px;
-    border-radius: 6px;
-    padding: 12px 28px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: none;
-}
-
 /* Botão Entrar (navbar) */
 .btn-entrar {
-    text-decoration: none; /* Adicione esta linha para remover o sublinhado */
+    text-decoration: none; 
     font-family: 'Roboto', Arial, sans-serif;
     font-weight: 700;
     font-size: 14px;
     border-radius: 6px;
-    padding: 12px 28px; /* Adicione estas propriedades do botão */
+    padding: 12px 28px; 
     cursor: pointer;
     transition: all 0.3s ease;
     border: none;
@@ -120,7 +122,24 @@ button {
     box-shadow: 0 0 16px rgba(0, 229, 255, 0.9);
 }
 
-/* --- Hero Section --- */
+
+/*================================================================================
+  4. SECÇÃO HERO (Página Inicial)
+================================================================================*/
+
+.hero-section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 120px 80px;
+    gap: 80px;
+    min-height: 100vh;
+    box-sizing: border-box;
+    /* Adiciona uma sobreposição escura para melhorar a legibilidade do texto */
+    background: rgba(10, 31, 51, 0.4); 
+}
+
 .hero-content {
     flex: 1;
     max-width: 520px;
@@ -147,14 +166,6 @@ button {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
-}
-
-.btn-primary, .btn-secondary {
-    padding: 12px 28px;
-    cursor: pointer;
-    font-weight: 700;
-    border-radius: 6px;
-    transition: 0.3s;
 }
 
 /* Botão Primário (branco discreto) */
@@ -198,8 +209,73 @@ button {
     filter: drop-shadow(0 0 20px #00e5ff);
 }
 
-/* --- Responsividade --- */
+
+/*================================================================================
+  5. NOVAS SECÇÕES (Equipa - Scroll Reveal Test)
+================================================================================*/
+
+#team-section {
+    padding: 100px 80px;
+    /* Escolhemos uma cor escura do seu tema, mas com opacidade de 0.8 */
+    background-color: rgba(13, 40, 64, 0.8); 
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    color: #00e5ff;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    font-size: 1rem;
+    color: #d0d0d0;
+    margin-bottom: 50px;
+}
+
+.team-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    width: 250px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+    border: 1px solid #00e5ff;
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
+}
+
+.member-photo {
+    width: 100px;
+    height: 100px;
+    background-color: #00e5ff;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    border: 3px solid #fff;
+    /* Placeholder - substitua por uma imagem real */
+}
+
+.team-member h3 {
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.team-member p {
+    color: #00e5ff;
+    font-size: 0.9rem;
+}
+
+
+/*================================================================================
+  6. RESPONSIVIDADE (MOBILE FIRST)
+================================================================================*/
+
 @media (max-width: 900px) {
+    /* Navbar */
     .navbar {
         padding: 25px 20px;
         flex-direction: column; 
@@ -219,6 +295,7 @@ button {
         width: 100%;
     }
 
+    /* Hero Section */
     .hero-section {
         flex-direction: column;
         text-align: center;
@@ -249,5 +326,68 @@ button {
     .btn-primary, .btn-secondary {
         flex: 1;
         text-align: center;
+    }
+    
+    /* Secção Equipa */
+    #team-section {
+        padding: 50px 20px;
+    }
+
+    .team-member {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/*================================================================================
+  6. NOVA SECÇÃO: O QUE FAZEMOS
+================================================================================*/
+
+#what-we-do {
+    padding: 100px 80px;
+    /* Usa a mesma cor escura, mas com 80% de opacidade (0.8) */
+    background-color: rgba(10, 31, 51, 0.8); 
+    text-align: center;
+    border-top: 1px solid rgba(0, 229, 255, 0.1); /* Opcional: separador suave */
+}
+
+.feature-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.feature-card {
+    width: 300px;
+    padding: 30px;
+    background-color: rgba(0, 229, 255, 0.05); /* Um fundo muito subtil */
+    border-radius: 10px;
+    border-left: 3px solid #00e5ff;
+    text-align: left;
+    height: 100%; /* Garante que os cartões têm a mesma altura */
+    box-sizing: border-box;
+}
+
+.feature-card h3 {
+    color: #00e5ff;
+    font-size: 1.5rem;
+    margin-top: 0;
+}
+
+.feature-card p {
+    color: #d0d0d0;
+}
+
+/* Responsividade para a nova secção */
+@media (max-width: 900px) {
+    #what-we-do {
+        padding: 50px 20px;
+    }
+    .feature-card {
+        width: 100%;
+        max-width: 400px;
+        margin: 15px 0;
     }
 }

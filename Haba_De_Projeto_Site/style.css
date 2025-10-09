@@ -1,0 +1,10 @@
+.neon-text {
+  color: #d9d9d9; /* Light gray text color */
+  text-shadow:
+    0 0 5px #bfbfbf,
+    0 0 10px #bfbfbf,
+    0 0 20px #a6a6a6,
+    0 0 40px #a6a6a6;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
