@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jarvis Virtual Assistant</title>
+    <link rel="shortcut icon" href="Imagens/avatar.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img src="Imagens/ai.png" alt="logo" id="logo">
+    <h1><span id="name">I'm <span id="va">C1,</span> Your </span><span id="va">Virtual Assistant</span></h1>
+    <img src="Imagens/aiVoice.gif" alt="voice" id="voice">
+    <button id="btn"><img src="mic.svg" alt="mic"><span id="content">Click here for talk to me</span></button>
+
+    <!-- Chatling Button -->
+    <script src="script.js"></script>
+    <script> window.chtlConfig = { chatbotId: "6394193585" } </script>
+    <script async data-id="6394193585" id="chtl-script" type="text/javascript" src="https://chatling.ai/js/embed.js"></script>
+    <!-- End Chatling Button -->
+
+    <!-- 4 Buttons -->
+    <div class="button-container000">
+      <a href="https://sapo.pt/noticias/tecnologia"><button000 type="submit" id="submit-btn000">Daily News</button000></a>
+      <a href="resume_home_page.html"><button000 type="submit" id="submit-btn000">Cv Generate</button000></a>
+    </div>
+    <!-- End 4 Buttons -->
+
+
+    <!-- Dark Mode Switch Theme -->
+    <label class="toggle">
+      <input id="themeToggle" type="checkbox" aria-label="Toggle dark mode">
+    </label>
+
+    <script>
+      (function(){
+        const STORAGE_KEY = 'site-theme';
+        const html = document.documentElement;
+        const toggle = document.getElementById('themeToggle');
+
+        function applyTheme(theme){
+          if(theme === 'dark'){
+            html.setAttribute('data-theme','dark');
+            toggle.checked = true;
+          } else {
+            html.removeAttribute('data-theme');
+            toggle.checked = false;
+          }
+        }
+
+        function initialTheme(){
+          try{
+            const saved = localStorage.getItem(STORAGE_KEY);
+            if(saved === 'dark' || saved === 'light') return saved;
+          }catch(e){}
+          return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+
+        applyTheme(initialTheme());
+
+        toggle.addEventListener('change', () => {
+          const newTheme = toggle.checked ? 'dark' : 'light';
+          applyTheme(newTheme);
+          try{ localStorage.setItem(STORAGE_KEY,newTheme); }catch(e){}
+        });
+      })();
+    </script>
+    <!-- End Dark Mode Switch Theme -->
+
+</body>
+</html>

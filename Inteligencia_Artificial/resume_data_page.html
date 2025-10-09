@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Resume Data Page</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="avatar.png" type="image/x-icon">
+        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </head>
+    <body>
+    <!-- Chatling Button -->
+    <script src="script.js"></script>
+    <script> window.chtlConfig = { chatbotId: "6394193585" } </script>
+    <script async data-id="6394193585" id="chtl-script" type="text/javascript" src="https://chatling.ai/js/embed.js"></script>
+    <!-- End Chatling Button -->
+
+        <nav class = "navbar bg-white">
+            <div class="container">
+                <div class = "navbar-content">
+                    <div class = "brand-and-toggler">
+                        <a href = "resume_home_page.html" class = "navbar-brand">
+                            <img src = "curriculum-vitae.png" alt = "" class = "navbar-brand-icon">
+                            <span class = "navbar-brand-text">Build <span>Resume</span>
+                        </a>
+                        <a href = "index_cv.html" class = "navbar-brand0">
+                            <a href="index.html"><img src = "avatar.png" alt = "" class = "navbar-brand-icon0"></a>
+                            <a href="index.html"><span class = "navbar-brand-text0">Jarvis <span>Home</span></a>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <section id = "about-sc" class = "">
+            <div class = "container">
+                <div class = "about-cnt">
+                    <form action="" class="cv-form" id = "cv-form">
+                        <div class = "cv-form-blk">
+                            <div class = "cv-form-row-title">
+                                <h3>about section</h3>
+                            </div>
+                            <div class = "cv-form-row cv-form-row-about">
+                                <div class = "cols-3">
+                                    <div class = "form-elem">
+                                        <label for = "" class = "form-label">First Name</label>
+                                        <input name = "firstname" type = "text" class = "form-control firstname" id = "" onkeyup="generateCV()" placeholder="e.g. John">
+                                        <span class="form-text"></span>
+                                    </div>
+                                    <div class = "form-elem">
+                                        <label for = "" class = "form-label">Middle Name <span class = "opt-text">(optional)</span></label>
+                                        <input name = "middlename" type = "text" class = "form-control middlename" id = "" onkeyup="generateCV()" placeholder="e.g. Herbert">
+                                        <span class="form-text"></span>
+                                    </div>
+                                    <div class = "form-elem">
+                                        <label for = "" class = "form-label">Last Name</label>
+                                        <input name = "lastname" type = "text" class = "form-control lastname" id = "" onkeyup="generateCV()" placeholder="e.g. Doe">
+                                        <span class="form-text"></span>
+                                    </div>
+                                </div>
+
+                                <div class="cols-3">
+                                    <div class = "form-elem">
+                                        <label for = "" class = "form-label">Your Image</label>
+                                        <input name = "image" type = "file" class = "form-control image" id = "" accept = "image/*" onchange="previewImage()">
+                                    </div>
+                                    <div class = "form-elem">
+                                        <label for = "" class = "form-label">Designation</label>
+                                        <input name = "designation" type = "text" class = "form-control designation" id = "" onkeyup="generateCV()" placeholder="e.g. Sr.Accountants">
+                                        <span class="form-text"></span>
+                                    </div>
+                                    <div class = "form-elem">
+                                        <label for = "" class = "form-label">Address</label>
+                                        <input name = "address" type = "text" class = "form-control address" id = "" onkeyup="generateCV()" placeholder="e.g. Lake Street-23">
+                                        <span class="form-text"></span>
+                                    </div>
+                                </div>
+
+                                <div class = "cols-3">
+                                    <div class = "form-elem">
+                                        <label for = "" class = "form-label">Email</label>
+                                        <input name = "email" type = "text" class = "form-control email" id = "" onkeyup="generateCV()" placeholder="e.g. johndoe@gmail.com">
+                                        <span class="form-text"></span>
+                                    </div>
+                                    <div class = "form-elem">
+                                        <label for = "" class = "form-label">Phone No:</label>
+                                        <input name = "phoneno" type = "text" class = "form-control phoneno" id = "" onkeyup="generateCV()" placeholder="e.g. 456-768-798, 567.654.002">
+                                        <span class="form-text"></span>
+                                    </div>
+                                    <div class = "form-elem">
+                                        <label for = "" class = "form-label">Summary</label>
+                                        <input name = "summary" type = "text" class = "form-control summary" id = "" onkeyup="generateCV()" placeholder="e.g. Doe">
+                                        <span class="form-text"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cv-form-blk">
+                            <div class = "cv-form-row-title">
+                                <h3>achievements</h3>
+                            </div>
+
+                            <div class = "row-separator repeater">
+                                <div class = "repeater" data-repeater-list = "group-a">
+                                    <div data-repeater-item>
+                                        <div class = "cv-form-row cv-form-row-achievement">
+                                            <div class = "cols-2">
+                                                <div class = "form-elem">
+                                                    <label for = "" class = "form-label">Title</label>
+                                                    <input name = "achieve_title" type = "text" class = "form-control achieve_title" id = "" onkeyup="generateCV()" placeholder="e.g. johndoe@gmail.com">
+                                                    <span class="form-text"></span>
+                                                </div>
+                                                <div class = "form-elem">
+                                                    <label for = "" class = "form-label">Description</label>
+                                                    <input name = "achieve_description" type = "text" class = "form-control achieve_description" id = "" onkeyup="generateCV()" placeholder="e.g. johndoe@gmail.com">
+                                                    <span class="form-text"></span>
+                                                </div>
+                                            </div>
+                                            <button data-repeater-delete type = "button" class = "repeater-remove-btn">-</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type = "button" data-repeater-create value = "Add" class = "repeater-add-btn">+</button>
+                            </div>
+                        </div>
+
+                        <div class="cv-form-blk">
+                            <div class = "cv-form-row-title">
+                                <h3>experience</h3>
+                            </div>
+
+                            <div class = "row-separator repeater">
+                                <div class = "repeater" data-repeater-list = "group-b">
+                                    <div data-repeater-item>
+                                        <div class = "cv-form-row cv-form-row-experience">
+                                            <div class = "cols-3">
+                                                <div class = "form-elem">
+                                                    <label for = "" class = "form-label">Title</label>
+                                                    <input name = "exp_title" type = "text" class = "form-control exp_title" id = "" onkeyup="generateCV()">
+                                                    <span class="form-text"></span>
+                                                </div>
+                                                <div class = "form-elem">
+                                                    <label for = "" class = "form-label">Company / Organization</label>
+                                                    <input name = "exp_organization" type = "text" class = "form-control exp_organization" id = "" onkeyup="generateCV()">
+                                                    <span class="form-text"></span>
+                                                </div>
+                                                <div class = "form-elem">
+                                                    <label for = "" class = "form-label">Location</label>
+                                                    <input name = "exp_location" type = "text" class = "form-control exp_location" id = "" onkeyup="generateCV()">
+                                                    <span class="form-text"></span>
+                                                </div>
+                                            </div>
+
+                                            <div class = "cols-3">
+                                                <div class = "form-elem">
+                                                    <label for = "" class = "form-label">Start Date</label>
+                                                    <input name = "exp_start_date" type = "date" class = "form-control exp_start_date" id = "" onkeyup="generateCV()">
+                                                    <span class="form-text"></span>
+                                                </div>
+                                                <div class = "form-elem">
+                                                    <label for = "" class = "form-label">End Date</label>
+                                                    <input name = "exp_end_date" type = "date" class = "form-control exp_end_date" id = "" onkeyup="generateCV()">
+                                                    <span class="form-text"></span>
+                                                </div>
+                                                <div class = "form-elem">
+                                                    <label for = "" class = "form-label">Description</label>
+                                                    <input name = "exp_description" type = "text" class = "form-control exp_description" id = "" onkeyup="generateCV()">
+                                                    <span class="form-text"></span>
+                                                </div>
+                                            </div>
+
+                                            <button data-repeater-delete type = "button" class = "repeater-remove-btn">-</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type = "button" data-repeater-create value = "Add" class = "repeater-add-btn">+</button>
+                            </div>
+                        </div>
+
+                        <div class="cv-form-blk">
+                            <div class = "cv-form-row-title">
+                                <h3>education</h3>
+                            </div>
+
+                            <div class = "row-separator repeater">
+                                <div class = "repeater" data-repeater-list = "group-c">
+                                    <div data-repeater-item>
+                                        <div class = "cv-form-row cv-form-row-experience">
+                                            <div class = "cols-3">
+                                                <div class = "form-elem">
+                                                    <label for = "" class = "form-label">School</label>
+                                                    <input name = "edu_school" type = "text" class = "form-control edu_school" id = "" onkeyup="generateCV()">
+                                                    <span class="form-text"></span>
+                                                </div>
+                                                <div class = "form-elem">
+                                                    <label for = "" class = "form-label">Degree</label>
+                                                    <input name = "edu_degree" type = "text" class = "form-control edu_degree" id = "" onkeyup="generateCV()">
+                                                    <span class="form-text"></span>
+                                                </div>
+                                                <div class = "form-elem">
+                                                    <label for = "" class = "form-label">City</label>
+                                                    <input name = "edu_city" type = "text" class = "form-control edu_city" id = "" onkeyup="generateCV()">
+                                                    <span class="form-text"></span>
+                                                </div>
+                                            </div>
+
+                                            <div class = "cols-3">
+                                                <div class = "form-elem">
+                                                    <label for = "" class = "form-label">Start Date</label>
+                                                    <input name = "edu_start_date" type = "date" class = "form-control edu_start_date" id = "" onkeyup="generateCV()">
+                                                    <span class="form-text"></span>
+                                                </div>
+                                                <div class = "form-elem">
+                                                    <label for = "" class = "form-label">End Date</label>
+                                                    <input name = "edu_graduation_date" type = "date" class = "form-control edu_graduation_date" id = "" onkeyup="generateCV()">
+                                                    <span class="form-text"></span>
+                                                </div>
+                                                <div class = "form-elem">
+                                                    <label for = "" class = "form-label">Description</label>
+                                                    <input name = "edu_description" type = "text" class = "form-control edu_description" id = "" onkeyup="generateCV()">
+                                                    <span class="form-text"></span>
+                                                </div>
+                                            </div>
+
+                                            <button data-repeater-delete type = "button" class = "repeater-remove-btn">-</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type = "button" data-repeater-create value = "Add" class = "repeater-add-btn">+</button>
+                            </div>
+                        </div>
+
+                        <div class="cv-form-blk">
+                            <div class = "cv-form-row-title">
+                                <h3>projects</h3>
+                            </div>
+
+                            <div class = "row-separator repeater">
+                                <div class = "repeater" data-repeater-list = "group-d">
+                                    <div data-repeater-item>
+                                        <div class = "cv-form-row cv-form-row-experience">
+                                            <div class = "cols-3">
+                                                <div class = "form-elem">
+                                                    <label for = "" class = "form-label">Project Name</label>
+                                                    <input name = "proj_title" type = "text" class = "form-control proj_title" id = "" onkeyup="generateCV()">
+                                                    <span class="form-text"></span>
+                                                </div>
+                                                <div class = "form-elem">
+                                                    <label for = "" class = "form-label">Project link</label>
+                                                    <input name = "proj_link" type = "text" class = "form-control proj_link" id = "" onkeyup="generateCV()">
+                                                    <span class="form-text"></span>
+                                                </div>
+                                                <div class = "form-elem">
+                                                    <label for = "" class = "form-label">Description</label>
+                                                    <input name = "proj_description" type = "text" class = "form-control proj_description" id = "" onkeyup="generateCV()">
+                                                    <span class="form-text"></span>
+                                                </div>
+                                            </div>
+                                            <button data-repeater-delete type = "button" class = "repeater-remove-btn">-</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type = "button" data-repeater-create value = "Add" class = "repeater-add-btn">+</button>
+                            </div>
+                        </div>
+
+                        <div class="cv-form-blk">
+                            <div class = "cv-form-row-title">
+                                <h3>skills</h3>
+                            </div>
+
+                            <div class = "row-separator repeater">
+                                <div class = "repeater" data-repeater-list = "group-e">
+                                    <div data-repeater-item>
+                                        <div class = "cv-form-row cv-form-row-skills">
+                                            <div class = "form-elem">
+                                                <label for = "" class = "form-label">Skill</label>
+                                                <input name = "skill" type = "text" class = "form-control skill" id = "" onkeyup="generateCV()">
+                                                <span class="form-text"></span>
+                                            </div>
+                                            
+                                            <button data-repeater-delete type = "button" class = "repeater-remove-btn">-</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type = "button" data-repeater-create value = "Add" class = "repeater-add-btn">+</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id = "preview-sc" class = "print_area">
+            <div class = "container">
+                <div class = "preview-cnt">
+                    <div class = "preview-cnt-l bg-green text-white">
+                        <div class = "preview-blk">
+                            <div class = "preview-image">
+                                <img src = "" alt = "" id = "image_dsp"> 
+                            </div>
+                            <div class = "preview-item preview-item-name">
+                                <span class = "preview-item-val fw-6" id = "fullname_dsp"></span>
+                            </div>
+                            <div class = "preview-item">
+                                <span class = "preview-item-val text-uppercase fw-6 ls-1" id = "designation_dsp"></span>
+                            </div>
+                        </div>
+
+                        <div class = "preview-blk">
+                            <div class = "preview-blk-title">
+                                <h3>about</h3>
+                            </div>
+                            <div class = "preview-blk-list">
+                                <div class = "preview-item">
+                                    <span class = "preview-item-val" id = "phoneno_dsp"></span>
+                                </div>
+                                <div class = "preview-item">
+                                    <span class = "preview-item-val" id = "email_dsp"></span>
+                                </div>
+                                <div class = "preview-item">
+                                    <span class = "preview-item-val" id = "address_dsp"></span>
+                                </div>
+                                <div class = "preview-item">
+                                    <span class = "preview-item-val" id = "summary_dsp"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class = "preview-blk">
+                            <div class = "preview-blk-title">
+                                <h3>skills</h3>
+                            </div>
+                            <div class = "skills-items preview-blk-list" id = "skills_dsp">
+                                <!-- skills list here -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class = "preview-cnt-r bg-white">
+                        <div class = "preview-blk">
+                            <div class = "preview-blk-title">
+                                <h3>Achievements</h3>
+                            </div>
+                            <div class = "achievements-items preview-blk-list" id = "achievements_dsp"></div>
+                        </div>
+
+                        <div class = "preview-blk">
+                            <div class = "preview-blk-title">
+                                <h3>educations</h3>
+                            </div>
+                            <div class = "educations-items preview-blk-list" id = "educations_dsp"></div>
+                        </div>
+
+                        <div class = "preview-blk">
+                            <div class = "preview-blk-title">
+                                <h3>experiences</h3>
+                            </div>
+                            <div class = "experiences-items preview-blk-list" id = "experiences_dsp"></div>
+                        </div>
+
+                        <div class = "preview-blk">
+                            <div class = "preview-blk-title">
+                                <h3>projects</h3>
+                            </div>
+                            <div class = "projects-items preview-blk-list" id = "projects_dsp"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class = "print-btn-sc">
+            <div class = "container">
+                <button type = "button" class = "print-btn btn btn-primary" onclick="printCV()">Print CV</button>
+            </div>
+        </section>
+
+        <footer class = "footer bg-dark">
+            <div class="container">
+                <div class = "footer-content text-center">
+                    <p class="fs-15">&#169; COPYRIGHT 2025 &copy; PAKISTAN. ALL RIGHTS RESERVED. DESIGN BY <a href="https://hamadkhan.infy.uk"><span>HAMAD KHAN</span></p>
+                </div>
+            </div>
+        </footer>
+
+
+<!-- Whatsapp Button -->
+<a href="https://wa.me/923479787164" class="whatsapp-button" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<style>
+.whatsapp-button {
+    position: fixed;
+    bottom: 11px;
+    left: 11px;
+    width: 37px;
+    height: 37px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-button:hover {
+    background-color: #128C7E;
+    transform: scale(1.1);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .whatsapp-button {
+        width: 37px;
+        height: 37px;
+        font-size: 23px;
+        bottom: 11px;
+        left: 11px;
+    }
+}
+
+/* Animation */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.whatsapp-button {
+    animation: pulse 2s infinite;
+}
+</style>
+<!-- End Whatsapp Button -->
+
+
+<!-- Back To Top Button -->
+<script> configObj = {"buttonD":"M8 18.568L10.8 21.333 16 16.198 21.2 21.333 24 18.568 16 10.667z","buttonT":"translate(-1148 -172) translate(832 140) translate(32 32) translate(284)","shadowSize":"0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)","roundnessSize":"999px","buttonDToBottom":"72px","buttonDToRight":"25px","selectedBackgroundColor":"#ffb30b","selectedIconColor":"#000000","buttonWidth":"40px","buttonHeight":"40px","svgWidth":"32px","svgHeight":"32px"};function createButton(obj, pageSimulator) {    const body = document.querySelector("body");    backToTopButton = document.createElement("span");    backToTopButton.classList.add("softr-back-to-top-button");    backToTopButton.id = "softr-back-to-top-button";    pageSimulator      ? pageSimulator.appendChild(backToTopButton)      : body.appendChild(backToTopButton);    backToTopButton.style.width = obj.buttonWidth;    backToTopButton.style.height = obj.buttonHeight;    backToTopButton.style.marginRight = obj.buttonDToRight;    backToTopButton.style.marginBottom = obj.buttonDToBottom;    backToTopButton.style.borderRadius = obj.roundnessSize;    backToTopButton.style.boxShadow = obj.shadowSize;    backToTopButton.style.color = obj.selectedBackgroundColor;    backToTopButton.style.backgroundColor = obj.selectedBackgroundColor;    pageSimulator ? backToTopButton.style.position = "absolute" : backToTopButton.style.position = "fixed";    backToTopButton.style.outline = "none";    backToTopButton.style.bottom = "0px";    backToTopButton.style.right = "0px";    backToTopButton.style.cursor = "pointer";    backToTopButton.style.textAlign = "center";    backToTopButton.style.border = "solid 2px currentColor";    backToTopButton.innerHTML =      '<svg class="back-to-top-button-svg" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" > <g fill="none" fill-rule="evenodd"> <path d="M0 0H32V32H0z" transform="translate(-1028 -172) translate(832 140) translate(32 32) translate(164) matrix(1 0 0 -1 0 32)" /> <path class="back-to-top-button-img" fill-rule="nonzero" d="M11.384 13.333h9.232c.638 0 .958.68.505 1.079l-4.613 4.07c-.28.246-.736.246-1.016 0l-4.613-4.07c-.453-.399-.133-1.079.505-1.079z" transform="translate(-1028 -172) translate(832 140) translate(32 32) translate(164) matrix(1 0 0 -1 0 32)" /> </g> </svg>';    backToTopButtonSvg = document.querySelector(".back-to-top-button-svg");    backToTopButtonSvg.style.verticalAlign = "middle";    backToTopButtonSvg.style.margin = "auto";    backToTopButtonSvg.style.justifyContent = "center";    backToTopButtonSvg.style.width = obj.svgWidth;    backToTopButtonSvg.style.height = obj.svgHeight;    backToTopButton.appendChild(backToTopButtonSvg);    backToTopButtonImg = document.querySelector(".back-to-top-button-img");    backToTopButtonImg.style.fill = obj.selectedIconColor;    backToTopButtonSvg.appendChild(backToTopButtonImg);    backToTopButtonImg.setAttribute("d", obj.buttonD);    backToTopButtonImg.setAttribute("transform", obj.buttonT);        if(!pageSimulator) {      backToTopButton.style.display = "none";      window.onscroll = function() {        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {          backToTopButton.style.display = "block";        } else {          backToTopButton.style.display = "none";        }      };        backToTopButton.onclick = function() {        document.body.scrollTop = 0;        document.documentElement.scrollTop = 0;      };    }  };document.addEventListener("DOMContentLoaded", function() { createButton(configObj, null); });
+</script>
+<!-- End Back To Top Button -->
+
+
+        <!-- jquery cdn -->
+        <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+        <!-- jquery repeater cdn -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.repeater/1.2.1/jquery.repeater.js" integrity="sha512-bZAXvpVfp1+9AUHQzekEZaXclsgSlAeEnMJ6LfFAvjqYUVZfcuVXeQoN5LhD7Uw0Jy4NCY9q3kbdEXbwhZUmUQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <!-- custom js -->
+        <script src = "script_cv.js"></script>
+        <!-- app js -->
+        <script src="app.js"></script>
+
+
+<!-- Menu Button -->
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+<!-- End Menu Button -->
+
+
+<!-- Social Links -->
+  <div class="social-links" id="socialLinks">
+    <ul>
+      <li><a href="https://hamadkhan.infy.uk" target="_blank"><img src="website.png" alt="Website"></a></li>
+      <li><a href="https://github.com/hamadkhanpro" target="_blank"><img src="gethub.png" alt="GitHub"></a></li>
+      <li><a href="https://www.fiverr.com/hamadkhantech/" target="_blank"><img src="fiverr.png" alt="Fiverr"></a></li>
+      <li><a href="https://www.upwork.com/freelancers/hamadk27" target="_blank"><img src="upwork.png" alt="UpWork"></a></li>
+      <li><a href="https://www.youtube.com/@hamadkhantech" target="_blank"><img src="youtube.png" alt="YouTube"></a></li>
+      <li><a href="https://www.facebook.com/hamadkhan987" target="_blank"><img src="facebook.png" alt="Facebook"></a></li>
+      <li><a href="https://www.instagram.com/hamadkhan_987/" target="_blank"><img src="instagram.png" alt="Instagram"></a></li>
+      <li><a href="https://wa.me/923479787164" target="_blank"><img src="whatsapp.png" alt="WhatsApp"></a></li>
+      <li><a href="https://www.snapchat.com/add/hamadkhan_987" target="_blank"><img src="snapchat.png" alt="Snapchat"></a></li>
+    </ul>
+  </div>
+
+  <script>
+    function toggleMenu() {
+    document.getElementById("socialLinks").classList.toggle("open");}
+  </script>
+<!-- End Social Links -->
+</body>
+</html>

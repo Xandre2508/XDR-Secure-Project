@@ -1,0 +1,411 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    flex-direction: column;
+}
+
+#logo{
+    width: 35vw;
+}
+
+h1{
+    color: aliceblue;
+    font-family: "Lato", sans-serif;
+    text-align: center;
+}
+
+#name{
+    color: rgb(212, 43, 122);
+    font-family: 40px;
+}
+
+#va{
+    color: rgb(43, 206, 212);
+    font-size: 40px;
+}
+
+#voice{
+    width: 128px;
+    display: none;
+}
+
+
+/* btn click here for talk to me */
+#btn{
+    width: 35vw;
+    background: linear-gradient(to right, rgb(21, 145, 207), rgb(201, 41, 116));
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 20px;
+    font-family: "Lato", sans-serif;
+    text-align: center;
+    border-radius: 20px;
+    color: white;
+    box-shadow: 2px 2px 10px rgb(21, 145, 207),2px 2px 10px rgb(201, 41, 116);
+    border: none;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+#btn:hover{
+    box-shadow: 2px 2px 20px rgb(21, 145, 207),2px 2px 10px rgb(201, 41, 116);
+    letter-spacing: 2px;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 600px) {
+    #logo {
+        width: 70vw;
+    }
+
+    h1 {
+        font-size: 7vw;
+    }
+
+    #btn {
+        font-size: 16px;
+        padding: 8px;
+        width: 80vw;
+        text-align: center;
+    }
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    #logo {
+        width: 70vw;
+    }
+
+    h1 {
+        font-size: 7vw;
+    }
+
+    #btn {
+        font-size: 16px;
+        padding: 8px;
+        width: 80vw;
+        text-align: center;
+    }
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 820px) {
+    #logo {
+        width: 70vw;
+    }
+
+    h1 {
+        font-size: 7vw;
+    }
+
+    #btn {
+        font-size: 16px;
+        padding: 8px;
+        width: 80vw;
+        text-align: center;
+    }
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 912px) {
+    #logo {
+        width: 70vw;
+    }
+
+    h1 {
+        font-size: 7vw;
+    }
+
+    #btn {
+        font-size: 16px;
+        padding: 8px;
+        width: 80vw;
+        text-align: center;
+    }
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 360px) {
+    #logo {
+        width: 70vw;
+    }
+
+    h1 {
+        font-size: 7vw;
+    }
+
+    #btn {
+        font-size: 16px;
+        padding: 8px;
+        width: 80vw;
+        text-align: center;
+    }
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 1024px) {
+    #logo {
+        width: 70vw;
+    }
+
+    h1 {
+        font-size: 7vw;
+    }
+
+    #btn {
+        font-size: 16px;
+        padding: 8px;
+        width: 80vw;
+        text-align: center;
+    }
+}
+/* End btn click here for talk to me */
+
+
+/* Menu Button */
+    .menu-btn {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      z-index: 1100;
+      width: 40px;
+      height: 40px;
+      background: #48a6ff;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+/* End Menu Button */
+
+
+/* Social Links Container */
+    .social-links {
+      position: absolute;
+      top: 68px;
+      left: 17px;
+      z-index: 1000;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.6s ease;
+    }
+
+    .social-links.open {
+      max-height: 600px; /* enough for all items */
+    }
+
+    .social-links ul {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      margin: 0;
+      gap: 10px;
+    }
+
+    .social-links li {
+      list-style: none;
+      border-radius: 50px;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      /* Animation hidden state */
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: all 0.5s ease;
+    }
+
+    /* Animate items one by one */
+    .social-links.open li {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .social-links.open li:nth-child(1) { transition-delay: 0.1s; }
+    .social-links.open li:nth-child(2) { transition-delay: 0.2s; }
+    .social-links.open li:nth-child(3) { transition-delay: 0.3s; }
+    .social-links.open li:nth-child(4) { transition-delay: 0.4s; }
+    .social-links.open li:nth-child(5) { transition-delay: 0.5s; }
+    .social-links.open li:nth-child(6) { transition-delay: 0.6s; }
+    .social-links.open li:nth-child(7) { transition-delay: 0.7s; }
+    .social-links.open li:nth-child(8) { transition-delay: 0.8s; }
+    .social-links.open li:nth-child(9) { transition-delay: 0.9s; }
+
+    .social-links li a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    .social-links img {
+      width: 25px;
+      height: 25px;
+      object-fit: contain;
+    }
+
+    /* Colors */
+    .social-links li:nth-child(1) { background: #d42b7a; } /* Website */
+    .social-links li:nth-child(2) { background: #424242; } /* GitHub */
+    .social-links li:nth-child(3) { background: #1DBF73; } /* Fiverr */
+    .social-links li:nth-child(4) { background: #14A800; } /* UpWork */
+    .social-links li:nth-child(5) { background: #FF0000; } /* YouTube */
+    .social-links li:nth-child(6) { background: #1877f2; } /* Facebook */
+    .social-links li:nth-child(7) { background: radial-gradient(circle at 30% 107%, 
+      #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    } /* Instagram */
+    .social-links li:nth-child(8) { background: #25D366; } /* WhatsApp */
+    .social-links li:nth-child(9) { background: #FFFC00; } /* Snapchat */
+
+    .social-links li:hover {
+      transform: scale(1.1);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+/* Responsive */
+    @media (max-width: 600px) {
+      .menu-btn {
+        top: 15px;
+        left: 15px;
+        width: 30px;
+        height: 30px;
+        font-size: 18px;
+      }
+      .social-links {
+        top: 60px;
+        left: 15px;
+      }
+      .social-links li {
+        width: 30px;
+        height: 30px;
+      }
+      .social-links img {
+        width: 16px;
+        height: 16px;
+      }
+    }
+/* End Social Links Container */
+
+
+/* 4 Buttons */
+.button-container000 {
+  padding: 15px 0px;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;       /* ✅ line break on small screens */
+  gap: 10px;
+  justify-content: center;
+}
+
+/* Fixed button styling */
+button000 {
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 28px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  display: inline-block;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Hover + Active effects */
+button000:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+button000:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* ✅ Mobile Responsive Design */
+@media (max-width: 600px) {
+  .button-container000 {
+    flex-direction: column;  /* stack vertically */
+    align-items: center;
+  }
+button000 {
+    width: 290px;        /* full width button on mobile */
+    font-size: 16px;   /* slightly bigger text for mobile */
+    padding: 14px 0;
+  }
+}
+/*End 4 Buttons */
+
+
+/* Dark Mode Switch Theme */
+    :root{
+      --bg: #f0f0f0;
+      --text: #0f1724;
+      --accent: #0066ff;
+      --transition: 250ms ease;
+    }
+    html[data-theme='dark']{
+      --bg: #0b1220;
+      --text: #e6eef8;
+      --accent: #48a6ff;
+    }
+    body{
+      background:var(--bg);
+      color:var(--text);
+      transition: background var(--transition), color var(--transition);
+    }
+    .toggle{
+      --w:52px; --h:30px; --pad:4px;
+      position:fixed;
+      top:1rem;
+      right:1rem;
+      width:var(--w);
+      height:var(--h);
+      z-index:1000;
+    }
+    .toggle input{
+      position:absolute;inset:0;opacity:0;cursor:pointer;
+    }
+    .track{
+      position:absolute;inset:0;border-radius:999px;background:rgba(0,0,0,0.08);
+      display:flex;align-items:center;padding:var(--pad);
+      transition:background var(--transition);
+    }
+    html[data-theme='dark'] .track{background:rgba(255,255,255,0.1)}
+    .knob{
+      width:calc(var(--h) - var(--pad)*2);
+      height:calc(var(--h) - var(--pad)*2);
+      border-radius:999px;background:var(--bg);
+      box-shadow:0 2px 6px rgba(0,0,0,0.2);
+      transform:translateX(0);
+      transition:transform var(--transition), background var(--transition);
+    }
+    .toggle input:checked + .track{
+      background:var(--accent);
+    }
+    .toggle input:checked + .track .knob{
+      transform:translateX(calc(var(--w) - var(--h)));
+    }
+/* End Dark Mode Switch Theme */
